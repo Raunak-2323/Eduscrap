@@ -1,0 +1,276 @@
+<section class="supply-chain-section" id="supply-chain">
+  <div class="supply-content fade-in">
+    <h4 class="section-subtitle">SUPPLY CHAIN</h4>
+    <h2 class="section-title">From Collection to Impact</h2>
+    <p class="section-desc">
+      We bridge the gap between donors and beneficiaries with a streamlined and traceable process — ensuring every contribution makes a measurable difference.
+    </p>
+  </div>
+</section>
+
+<section class="supply-timeline">
+  <div class="timeline-step left fade-in">
+    <div class="timeline-icon"><img src="images/collect.png" alt="Collect"></div>
+    <div class="timeline-text">
+      <h3>Collection</h3>
+      <p><strong>Materials such as used notebooks, pens, and partially filled stationery</strong> are gathered through eco-drives organized in schools, housing societies, and offices. These campaigns not only collect valuable items but also spread awareness about sustainable disposal. Each item is logged, ensuring transparency from the first step.</p>
+    </div>
+  </div>
+
+  <div class="timeline-step right fade-in">
+    <div class="timeline-icon"><img src="images/sorting.png" alt="Sort"></div>
+    <div class="timeline-text">
+      <h3>Sorting</h3>
+      <p><strong>Dedicated volunteers manually inspect and classify each item</strong> into categories: reusable, recyclable, or decomposable. This sorting process ensures only safe and quality materials move forward in the supply chain while reducing contamination or waste. Special care is taken to separate fragile or damaged goods.</p>
+    </div>
+  </div>
+
+  <div class="timeline-step left fade-in">
+    <div class="timeline-icon"><img src="images/Transportation.png" alt="Transport"></div>
+    <div class="timeline-text">
+      <h3>Transportation</h3>
+      <p><strong>Items are carefully packed and dispatched via eco-friendly transport</strong> such as e-rickshaws, cycles, and vans. These materials are routed to processing hubs or community warehouses depending on their type. Routes are optimized to reduce emissions and delivery time.</p>
+    </div>
+  </div>
+
+  <div class="timeline-step right fade-in">
+    <div class="timeline-icon"><img src="images/processing.png" alt="Processing"></div>
+    <div class="timeline-text">
+      <h3>Processing</h3>
+      <p><strong>Each item undergoes a thorough quality check</strong>. Usable notebooks are rebound, pens are cleaned and refilled, and sorted paper is bundled. Faulty materials are responsibly recycled. This adds immense value by giving waste a second life.</p>
+    </div>
+  </div>
+
+  <div class="timeline-step left fade-in">
+    <div class="timeline-icon"><img src="images/reuse.png" alt="Reuse"></div>
+    <div class="timeline-text">
+      <h3>Reuse</h3>
+      <p><strong>Processed items are assembled into educational kits</strong> including notebooks, stationery, and art materials. These are distributed to underprivileged students via NGOs and schools, empowering learning and reducing the need for new manufacturing.</p>
+    </div>
+  </div>
+
+  <div class="timeline-step right fade-in">
+    <div class="timeline-icon"><img src="images/impact.png" alt="Impact"></div>
+    <div class="timeline-text">
+      <h3>Impact Tracking</h3>
+      <p><strong>Each donation is traceable using a unique tracking ID</strong>. Contributors can view the final destination of their items, building trust and encouraging repeat participation. The journey of every product is transparent and meaningful.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="simple-footer">
+  <p>© 2025 EduScrap-Made by Raunak. All rights reserved.</p>
+</footer>
+
+
+<style>
+.supply-chain-section {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #e6ffe9, #f3faff);
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #00a86b;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 40px;
+  color: #043927;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.section-desc {
+  font-size: 18px;
+  color: #2d2d2d;
+  font-weight: 600;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.supply-timeline {
+  position: relative;
+  padding: 80px 10%;
+  background-color: #fefefe;
+}
+
+.supply-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #aad4bf;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-step.left {
+  flex-direction: row;
+}
+
+.timeline-step.right {
+  flex-direction: row-reverse;
+}
+
+.timeline-icon {
+  width: 110px;
+  height: 110px;
+  background: #fff;
+  border: 5px dashed #00a86b;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.timeline-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.timeline-step:hover .timeline-icon {
+  animation: giggle 0.4s ease-in-out;
+}
+.timeline-text {
+  background: #e9fff1;
+  padding: 32px;
+  border-radius: 14px;
+  margin: 0 30px;
+  max-width: 550px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, border 0.3s ease;
+  font-weight: 600;
+  border: 2px solid transparent; /* initial transparent border to prevent layout shift */
+}
+
+.timeline-step:hover .timeline-text {
+  transform: scale(1.02);
+  border: 2px solid #00a86b; /* border color on hover */
+}
+
+
+@keyframes giggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.timeline-icon img {
+  width: 55px;
+  height: 55px;
+}
+
+.timeline-text {
+  background: #e9fff1;
+  padding: 32px;
+  border-radius: 14px;
+  margin: 0 30px;
+  max-width: 550px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+}
+
+.timeline-step:hover .timeline-text {
+  transform: scale(1.02);
+}
+
+.timeline-text h3 {
+  color: #043927;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.timeline-text p {
+  font-size: 16.5px;
+  color: #2b2b2b;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .supply-timeline::before {
+    left: 12px;
+  }
+  .timeline-step {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+  .timeline-icon {
+    margin-bottom: 20px;
+  }
+  .timeline-text {
+    margin: 0;
+    padding: 25px;
+  }
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+
+.simple-footer {
+  background-color: #eaffea;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 15px;
+  color: #145214;
+  font-weight: 600;
+  border-top: 2px solid #b2eac2;
+  margin-top: 50px;
+}
+
+</style>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>

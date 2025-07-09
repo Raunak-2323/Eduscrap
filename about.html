@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | EduScrap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to right, #f3fff0, #e5fbe8);
+      color: #173b17;
+    }
+
+    header {
+      background-color: #bfffc2;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #267326;
+      letter-spacing: 1px;
+      animation: floatHeader 4s ease-in-out infinite;
+    }
+
+    @keyframes floatHeader {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      color: #104210;
+      margin-bottom: 20px;
+      animation: slideUp 1s ease-out;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2rem;
+      color: #333;
+      animation: slideUp 1.4s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      padding: 60px 10%;
+      animation: fadeInSection 1s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    @keyframes fadeInSection {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1e541e;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      height: 4px;
+      width: 60px;
+      background: #3dbf3d;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+
+    .mission, .founder-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 40px;
+    }
+
+    .mission img, .founder-block img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s;
+    }
+
+    .mission img:hover, .founder-block img:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .mission p, .founder-block p {
+      max-width: 500px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .founder-block p span.name {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #166916;
+    }
+
+    .founder-block p::before {
+      content: '“';
+      font-size: 3rem;
+      color: #3dbf3d;
+      margin-right: 8px;
+      vertical-align: top;
+    }
+
+    .highlight-box {
+      background-color: #eaffea;
+      border-left: 6px solid #3dbf3d;
+      padding: 20px;
+      border-radius: 10px;
+      font-style: italic;
+      margin-top: 20px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      width: 220px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .stat:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .stat h3 {
+      font-size: 2.5rem;
+      color: #2d7f2d;
+    }
+
+    .stat p {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .founder-block {
+      margin-top: 60px;
+    }
+
+    footer {
+      background-color: #c3f8cb;
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+      color: #255f25;
+    }
+
+    @media(max-width: 768px) {
+      .mission, .founder-block {
+        flex-direction: column;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.8rem;
+      }
+
+      .stat {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌍 EduScrap</h1>
+  </header>
+
+  <section class="hero">
+    <h2>About Us</h2>
+    <p>We're on a mission to recycle educational waste into impactful, green tools. Learn our story, see the stats, and join the movement!</p>
+  </section>
+
+  <section class="section">
+    <h2>🌱 Our Mission</h2>
+    <div class="mission">
+      <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" alt="Mission icon"/>
+      <p>
+        EduScrap transforms used academic resources like notebooks and papers into refurbished study kits.
+        We enable eco-conscious students and schools to reduce waste while empowering education.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🧑‍💼 Meet the Founder</h2>
+    <div class="founder-block">
+      <img src="images/CEO.jpg" alt="Founder of EduScrap">
+      <div>
+        <p>
+            Namaste Everyone!<br>
+         I'm <span class="name">Raunak - The Founder of EDUSCRAP</span> <br>
+        Passionate about reshaping the way we handle academic waste. I believe every discarded notebook or paper can spark a new chapter in someone else's education. Through EduScrap, I aim to build a green, accessible, and impactful ecosystem where reuse fuels opportunity.
+        </p>
+        <div class="highlight-box">
+          "Let’s turn yesterday’s scraps into tomorrow’s success."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📊 Our Impact</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3 class="count" data-target="15000">0</h3>
+        <p>Recycled Kits</p>
+      </div>
+      <div class="stat">
+        <h3 class="count" data-target="320">0</h3>
+        <p>Schools Involved</p>
+      </div>
+      <div class="stat">
+        <h3 class="count" data-target="28">0</h3>
+        <p>Districts Reached</p>
+      </div>
+      <div class="stat">
+        <h3 class="count" data-target="12">0</h3>
+        <p>Awards Won</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  © 2025 EduScrap-Made by Raunak. All rights reserved.
+  </footer>
+
+  <script>
+    const counters = document.querySelectorAll('.count');
+    const speed = 100;
+
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = Math.ceil(target / speed);
+
+            if (count < target) {
+              counter.innerText = count + inc;
+              setTimeout(updateCount, 25);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => {
+      countObserver.observe(counter);
+    });
+
+    const sections = document.querySelectorAll('.section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+  </script>
+
+</body>
+</html>
