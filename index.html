@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduScrap</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    
+ /* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #c3f39f;
+  color: #1e3a1e;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #d4f59d;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #010c01;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2c6e27;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid #1e3a1e;
+  padding-bottom: 2px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 2rem 3rem;
+  background: linear-gradient(to right, #b6d6d6, #459c42);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.hero-text {
+  max-width: 50%;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #163d16;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: #fff9c9;
+  border: 2px solid #d8ddd8;
+  border-radius: 8px;
+  color: #1e3a1e;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 153, 0.3);
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #fffdcf;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 153, 0.5);
+}
+
+.hero-imgs .hero-main-img {
+  max-width: 420px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.top-icon {
+  width: 80px;
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 1.5rem;
+}
+
+/* Sparkle animation */
+.sparkles::before,
+.sparkles::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+  animation: sparkle 10s linear infinite;
+  z-index: 1;
+}
+
+.sparkles::after {
+  animation-direction: reverse;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-10%, -10%) rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text, .hero-imgs {
+    max-width: 100%;
+  }
+
+  .hero-imgs img {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+    /* AIM */
+.aim-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to left, #b3df8f, #e0b0a4);
+  border-radius: 30px 30px 0 0;
+  box-shadow: inset 0 0 50px #b1e6a2;
+  overflow: hidden;
+  position: relative;
+}
+
+.aim-left {
+  flex: 1 1 50%;
+  padding-right: 2rem;
+  animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.aim-left h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0b1617;
+}
+
+.aim-left p {
+  font-size: 1.1rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.aim-left ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.aim-left ul li {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #2c6e27;
+  padding-left: 0.5rem;
+  transition: transform 0.4s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s forwards;
+}
+
+.aim-left ul li:nth-child(1) { animation-delay: 0.3s; }
+.aim-left ul li:nth-child(2) { animation-delay: 0.6s; }
+.aim-left ul li:nth-child(3) { animation-delay: 0.9s; }
+.aim-left ul li:nth-child(4) { animation-delay: 1.2s; }
+
+.aim-right {
+  flex: 1 1 40%;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+.aim-right img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(132, 217, 210, 0.2);
+}
+
+/* Button + Volunteer */
+.aim-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #fff3b0;
+  color: #1e3a1e;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #1e3a1e;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.aim-btn:hover {
+  background-color: #ffe66d;
+  transform: scale(1.05);
+}
+
+.volunteer-call {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #2e7d32;
+}
+
+.volunteer-call a {
+  font-weight: bold;
+  color: #0e4f1a;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .aim-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .aim-left, .aim-right {
+    flex: 1 1 100%;
+    padding: 1rem;
+  }
+
+  .aim-right img {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .aim-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .aim-left ul li {
+    font-size: 1rem;
+  }
+}
+
+
+/* ========== TRUSTED SERVICES SECTION ========== */
+
+.trusted-services {
+  background-color: #eef6fb; /* matches Hair Haulers blue-tint */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.trusted-services .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sub-heading {
+  color: #ff7a00;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.main-heading {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0a2b3c;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 17px;
+  color: #444;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .sub-heading {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trusted-services {
+    padding: 60px 15px;
+  }
+
+  .main-heading {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* ========= EDU USES SECTION ========== */
+.eco-uses-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 5%;
+  background-color: #f0f8ff;
+  justify-items: center;
+}
+
+.eco-use-card {
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.eco-use-card:hover {
+  border-color: #ff7a00;
+  transform: translateY(-6px);
+}
+.use-icon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #e3f7d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.use-icon img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.eco-use-card:hover .use-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.eco-use-card:hover .use-icon img {
+  transform: scale(1.1);
+}
+
+.use-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.use-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a2b3c;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.use-number {
+  color: #ff7a00;
+  font-weight: 800;
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.use-content p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 960px) {
+  .eco-use-card {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .eco-uses-section {
+    padding: 40px 15px;
+  }
+
+  .eco-use-card {
+    padding: 25px 20px;
+  }
+
+  .use-content h3 {
+    font-size: 16px;
+  }
+
+  .use-content p {
+    font-size: 14px;
+  }
+
+  .use-icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.supply-chain-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 8%;
+  background-color: #fefefe;
+  flex-wrap: wrap;
+}
+
+.supply-content {
+  max-width: 60%;
+}
+
+.section-subtitle {
+  color: #ff7a00;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #062f4f;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.readmore-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-more-btn {
+  background-color: #ff7a00;
+  padding: 18px 28px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid transparent;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn span {
+  margin-left: 12px;
+  font-weight: 500;
+}
+
+.read-more-btn::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid #ff7a00;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover::after {
+  opacity: 1;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .supply-chain-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .supply-content {
+    max-width: 100%;
+  }
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 5vw;
+  margin: auto;
+}
+
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 25px;
+  margin: 0;
+}
+
+
+    .timeline-card:hover {
+      transform: translateY(-5px) rotate(-1deg);
+      box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
+      border-color: #ff8800;
+      animation: giggle 0.4s ease-in-out;
+    }
+
+    @keyframes giggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(1deg); }
+      50% { transform: rotate(-1deg); }
+      75% { transform: rotate(1deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .timeline-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .timeline-card h3 {
+      font-size: 20px;
+      color: #0a2b40;
+      margin: 10px 0;
+    }
+
+    .timeline-card p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-card {
+        flex: 1 1 100%;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+    .future-section {
+      padding: 60px 5vw;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .future-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ff7a00;
+      margin-bottom: 40px;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .future-card {
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid #ff7a00;
+      position: relative;
+    }
+
+    .future-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 123, 0, 0.3);
+    }
+
+    .future-card::before {
+      content: '✨';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 20px;
+      animation: sparkle 1.5s infinite ease-in-out;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .future-card h3 {
+      font-size: 20px;
+      color: #092b45;
+      margin-bottom: 10px;
+    }
+
+    .future-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @media screen and (max-width: 600px) {
+      .future-title {
+        font-size: 28px;
+      }
+    }
+/* Newsletter Section */
+.newsletter {
+  background: linear-gradient(120deg, #d7f5e9, #e7f9f0);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.newsletter-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  color: #0b4f2e;
+}
+
+.newsletter p {
+  color: #333;
+  font-size: 1rem;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.subscribe-form input {
+  padding: 0.8rem;
+  border: 2px solid #0b4f2e;
+  border-radius: 10px;
+  width: 250px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.subscribe-form button {
+  background-color: #0b4f2e;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #09633a;
+}
+
+/* Footer */
+.footer {
+  background-color: #f0f8f4;
+  padding: 3rem 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-brand h3 {
+  color: #0b4f2e;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  max-width: 300px;
+  color: #444;
+}
+
+.social-icons a img {
+  width: 30px;
+  margin-right: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-links h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #0b4f2e;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #0b4f2e;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newsletter-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links, .footer-brand {
+    text-align: center;
+  }
+}
+/* Responsive Navbar */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #145214;
+  z-index: 1100;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #e7f9e2;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .contact {
+    display: none;
+  }
+}
+
+
+/* Toggle Button */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
+  z-index: 1101;
+}
+
+.menu-icon .close-icon {
+  display: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Toggle icon show/hide */
+#menu-toggle:checked + .menu-icon .open-icon {
+  display: none;
+}
+
+#menu-toggle:checked + .menu-icon .close-icon {
+  display: inline;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #e7f9e2;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    display: none;
+    animation: dropdown 0.3s ease-in-out forwards;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .contact {
+    display: none;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+ <nav class="navbar">
+  <div class="logo">📚 <span>Edu</span>Scrap</div>
+
+  <!-- Toggle -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars open-icon"></i>
+    <i class="fas fa-times close-icon"></i>
+  </label>
+      <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#aim">Aim</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#future">Future Scope</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sign.html">Sign In</a></li>
+      </ul>
+      <div class="contact">
+        <span>📞 FREE CALL IN INDIA</span><br/>
+        <strong>1234 567 890</strong>
+      </div>
+    </nav>
+  </header>
+
+   <section class="hero">
+   
+
+    <div class="hero-text">
+      <img src="images/notebook.png" alt="recycle book icon" class="top-icon" />
+      <h1>Turning Old Books<br>into a Greener Future</h1>
+      <p>From dusty textbooks to eco-notebooks — sustainability starts here.</p>
+      <a href="#services" class="cta-button">View Services</a>
+    </div>
+
+    <div class="hero-imgs">
+      <img src="images/bin.png" alt="Books and Bin" class="hero-main-img" />
+    </div>
+   
+  
+  </section>
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+
+<section id="aim" class="aim-section">
+  <div class="aim-left">
+    <h2>🎯 Our Aim</h2>
+    <p>
+      EduScrap is dedicated to reducing academic waste by breathing new life into old educational materials. 
+      Our mission is to promote sustainable learning by:
+    </p>
+    <ul>
+      <li class="aim-point">♻️ Recycling outdated textbooks into reusable resources</li>
+      <li class="aim-point">📘 Providing eco-friendly notebooks to students in need</li>
+      <li class="aim-point">🌍 Supporting a cleaner, greener education system</li>
+      <li class="aim-point">📦 Creating a supply chain of reused knowledge</li>
+    </ul>
+    <a href="about.html" class="aim-btn">Learn More</a>
+    <p class="volunteer-call">Want to contribute? <br>
+      <a href="sign.html">Join as a Volunteer</a></p>
+  </div>
+
+  <div class="aim-right">
+    <img src="images/aim.png" alt="Eco-friendly books" />
+  </div>
+</section>
+
+
+
+
+
+
+
+  <section class="trusted-services"  id="services">
+  <div class="container">
+    <h5 class="sub-heading">OUR SERVICES TO INDUSTRIES</h5>
+    <h2 class="main-heading">Trusted For Our Services</h2>
+    <p class="description">
+      Offering valuable services to customers brings immense personal fulfillment and satisfaction.
+      Our services cater to a diverse range of clients, from schools to communities, and this variety
+      not only enhances the experience, but also provides opportunities for growth and expansion.
+    </p>
+  </div>
+</section>
+
+<section class="eco-uses-section">
+  <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/recycle notebooks.webp" alt="Eco Book Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">01</span> Recycled Notebooks</h3>
+      <p>
+        Used sheets are collected and transformed into eco-friendly notebooks for students in underserved schools. These notebooks help reduce paper waste and promote sustainable learning practices.
+      </p>
+    </div>
+  </div>
+
+  <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/seed.webp" alt="Seed Paper Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">02</span> Seed Paper Sheets</h3>
+      <p>
+        Paper waste is turned into seed paper — biodegradable sheets embedded with seeds. These are distributed during awareness campaigns to promote environmental education and green habits.
+      </p>
+    </div>
+  </div>
+
+  <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/recycled-boxes.jpg" alt="Recycled Packaging Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">03</span> Recycled Packaging</h3>
+      <p>
+        Collected scrap is processed into durable packaging materials used by local suppliers, replacing plastic wraps and bubble sheets — promoting a circular, zero-waste supply chain.
+      </p>
+    </div>
+  </div>
+    <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/art.jpg" alt="Upcycled Art Kit Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">04</span> Upcycled Art Kits</h3>
+      <p>
+        Reusable paper, cartons, and binders are bundled into art kits for NGOs and underprivileged students, encouraging creativity while promoting a habit of reuse and recycling in early education.
+      </p>
+    </div>
+  </div>
+
+  <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/board.jpg" alt="Classroom Boards Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">05</span> Classroom Display Boards</h3>
+      <p>
+        Sturdy cardboard and laminated sheets from scrap are reassembled into display boards for classrooms and libraries, replacing costly alternatives and reducing landfill waste significantly.
+      </p>
+    </div>
+  </div>
+
+  <div class="eco-use-card">
+    <div class="use-icon">
+      <img src="images/bag.jpg" alt="Eco Tote Bag Icon">
+    </div>
+    <div class="use-content">
+      <h3><span class="use-number">06</span> Eco-Friendly Tote Bags</h3>
+      <p>
+        Worn-out school bags and uniforms are stitched into usable tote bags distributed during environmental drives — offering sustainable replacements for plastic and promoting textile reuse.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="supply-chain-section" id="supply-chain">
+  <div class="supply-content fade-in">
+    <h4 class="section-subtitle">SUPPLY CHAIN</h4>
+    <h2 class="section-title">Collaboration And<br>Transportation</h2>
+    <p class="section-desc">
+      Connecting donors with industries through efficient, <br>eco-friendly logistics for a greener tomorrow.
+    </p>
+  </div>
+   <div class="readmore-container fade-in">
+      <a href="yo.html" class="read-more-btn">To Know More<span>—</span></a>
+    </div>
+</section>
+
+
+
+<section class= "future scope" id="future">
+ <section class="future-section">
+    <h2 class="future-title">🚀 Future Scope of EduScrap</h2>
+    <div class="future-grid">
+
+      <div class="future-card">
+        <h3>Nationwide Collection Drives</h3>
+        <p>Setup permanent drop-boxes in schools and societies to create an ecosystem of routine donation drives across India.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>Smart QR Tracking</h3>
+        <p>Assign QR codes to each kit so contributors can track where and how their donations are making a difference.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>NGO + EdTech Partnerships</h3>
+        <p>Collaborate with NGOs and EdTech platforms to distribute kits and enable hybrid education with scrap-powered resources.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>Eco-Kit Product Line</h3>
+        <p>Launch reusable notebooks and stationery made from collected scrap, under the EduScrap brand.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>EduScrap Mobile App</h3>
+        <p>Provide donation pickup requests, contributor dashboards, and gamified achievements for users and volunteers.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>Youth Volunteering</h3>
+        <p>Start school-based programs allowing youth to contribute time towards sorting, logistics, and digital campaigning.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>Zero Waste Certification</h3>
+        <p>Certify institutions with low-to-zero stationery waste, promoting sustainable education practices.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>Scrap-to-Scholarship</h3>
+        <p>Fund educational scholarships using proceeds from recycled kits and scrap-based product sales.</p>
+      </div>
+
+      <div class="future-card">
+        <h3>AI-Based Inventory Prediction</h3>
+        <p>Integrate AI to forecast the supply and demand of scrap materials to optimize collection and redistribution logistics.</p>
+      </div>
+
+    </div>
+
+    
+  </section>
+</section>
+
+</section>
+
+
+ 
+
+<!-- Footer -->
+<!-- Newsletter + Footer Section -->
+<section class="newsletter">
+  <div class="newsletter-content">
+    <div>
+      <h2>📬 Stay in the Loop</h2>
+      <p>Get updates on our eco-initiatives and digital recycling campaigns.</p>
+    </div>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-columns">
+    <div class="footer-brand">
+      <h3>EduScrap 🌱</h3>
+      <p>Turning educational waste into meaningful resources through sustainable practices.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/raunak-narang-35435834b/"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" /></a>
+        <a href="https://github.com/RAUNAK-1411"><img src="images/github.png" alt="github" /></a>
+
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#aim">Aim</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#future">Future Scope</a></li>
+         
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Supply Chain</h4>
+      <ul>
+        <li><a href="yo.html">Collection</a></li>
+        <li><a href="yo.html">Processing</a></li>
+        <li><a href="yo.html">Distribution</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 EduScrap-Made by Raunak. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>  
